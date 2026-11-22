@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Prince Abuu Bakar | Book Your Zanzibar Tour</title>
+    <meta name="description" content="Plan a Zanzibar adventure and send your tour request directly through WhatsApp.">
+    <meta name="theme-color" content="#087e80">
+    <meta name="color-scheme" content="light">
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpeg">
+    <link rel="stylesheet" href="style.css">
+    <script src="assets/lucide.min.js"></script>
+</head>
+<body>
+<header class="header">
+    <div class="container nav-container">
+
+        <a href="index.html" class="brand">
+            <img
+                src="assets/images/logo.jpeg"
+                alt="Prince Abuu Bakar Zanzibar Tours"
+                class="site-logo"
+                width="180"
+                height="60"
+            >
+            <span class="brand-name">Prince Abuu Bakar <small>Tour</small></span>
+        </a>
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="index.html">
+                <i data-lucide="house" aria-hidden="true"></i>
+                <span data-i18n="navHome">Home</span>
+            </a>
+            <a href="destinations.html">
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+                <span data-i18n="navDestinations">Destinations</span>
+            </a>
+            <a href="tours.html">
+                <i data-lucide="compass" aria-hidden="true"></i>
+                <span data-i18n="navTours">Tours</span>
+            </a>
+            <a href="about.html">
+                <i data-lucide="info" aria-hidden="true"></i>
+                <span data-i18n="navAbout">About</span>
+            </a>
+            <a href="gallery.html">
+                <i data-lucide="images" aria-hidden="true"></i>
+                <span data-i18n="navGallery">Gallery</span>
+            </a>
+
+            <a href="booking.html" class="btn btn-primary nav-book nav-mobile-book">
+                Book Your Trip
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+        </nav>
+
+        <div class="nav-actions">
+            <label class="language-picker" aria-label="Website language">
+                <i data-lucide="globe-2"></i>
+                <select id="languageSelect">
+                    <option value="en">EN</option>
+                    <option value="sw">SW</option>
+                    <option value="fr">FR</option>
+                    <option value="de">DE</option>
+                    <option value="it">IT</option>
+                    <option value="es">ES</option>
+                </select>
+            </label>
+
+            <a href="booking.html" class="btn btn-primary nav-book nav-desktop-book">
+                Book Your Trip
+                <i data-lucide="arrow-up-right"></i>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+<main>
+<section class="booking section-padding" id="booking">
+
+    <div class="container booking-grid">
+
+        <div class="booking-info">
+
+            <span class="section-tag" data-i18n="planExperience">PLAN YOUR EXPERIENCE</span>
+
+            <h2>
+                <span data-i18n="bookYour">Book Your</span>
+                <span data-i18n="zanzibarAdventure">Zanzibar Adventure</span>
+            </h2>
+
+            <p>
+                <span data-i18n="bookingIntro">Tell us about your dream experience. Send your request directly to WhatsApp and we will help you plan your trip.</span>
+            </p>
+
+        </div>
+
+        <div class="booking-form-wrapper">
+
+            <div class="booking-form-header">
+
+                <div class="booking-form-kicker">
+                    <i data-lucide="calendar-check" aria-hidden="true"></i>
+                    <span class="form-label" data-i18n="bookingRequest">TOUR BOOKING REQUEST</span>
+                </div>
+
+                <h3 data-i18n="planYourTrip">Plan Your Trip</h3>
+
+                <p data-i18n="bookingFormIntro">Complete the details below to start your booking.</p>
+
+            </div>
+
+            <form class="booking-form" id="bookingForm">
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="fullName" data-i18n="fullName">Full Name *</label>
+
+                        <input
+                            type="text"
+                            id="fullName"
+                            placeholder="Your full name"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="email" data-i18n="emailAddress">Email Address</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="tourSelect" data-i18n="selectTour">Select Your Tour *</label>
+
+                    <select id="tourSelect" required>
+
+                        <option value="" data-i18n="chooseExperience">Choose your experience</option>
+
+                    </select>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="guests" data-i18n="numberGuests">Number of Guests *</label>
+
+                        <select id="guests" required>
+
+                            <option value="" data-i18n="selectGuests">Select guests</option>
+                            <option value="1 Person" data-i18n="guest1">1 Person</option>
+                            <option value="2 People" data-i18n="guest2">2 People</option>
+                            <option value="3 People" data-i18n="guest3">3 People</option>
+                            <option value="4 People" data-i18n="guest4">4 People</option>
+                            <option value="5 People" data-i18n="guest5">5 People</option>
+                            <option value="6-10 People" data-i18n="guest6">6–10 People</option>
+                            <option value="More than 10 People" data-i18n="guest10">More than 10</option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="travelDate" data-i18n="preferredDate">Preferred Date *</label>
+
+                        <input
+                            type="date"
+                            id="travelDate"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="hotelLocation" data-i18n="hotelLocation">Hotel / Pickup Location</label>
+
+                    <input
+                        type="text"
+                        id="hotelLocation"
+                        placeholder="Hotel name or location"
+                    >
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="message" data-i18n="additionalInfo">Additional Information</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="Tell us about your plans, special requests or preferred activities..."
+                    ></textarea>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary form-submit">
+
+                    <span data-i18n="sendBooking">Send Booking Request via WhatsApp</span>
+
+                    <i data-lucide="send"></i>
+
+                </button>
+
+                <p class="form-note">
+                    <i data-lucide="shield-check"></i>
+                    <span data-i18n="formNote">No payment is required to send an inquiry.</span>
+                </p>
+
+            </form>
+
+        </div>
+
+        <div class="location-map-card">
+            <div class="location-map-header">
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+                <div>
+                    <span data-i18n="location">Location</span>
+                    <strong>Zanzibar, Tanzania</strong>
+                </div>
+            </div>
+
+            <iframe
+                class="google-map"
+                title="Zanzibar map"
+                src="https://www.google.com/maps?q=Zanzibar,+Tanzania&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+            ></iframe>
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Zanzibar,Tanzania"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="map-link"
+            >
+                <i data-lucide="map-pin" aria-hidden="true"></i>
+                <span data-i18n="openInMaps">Open in Google Maps</span>
+            </a>
+
+            <div class="map-contact-actions" role="group" aria-label="Contact options">
+                <a
+                    href="https://wa.me/255772548855"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-contact-icon map-contact-whatsapp"
+                    aria-label="WhatsApp"
+                >
+                    <img src="assets/images/what.jpg" alt="" aria-hidden="true">
+                </a>
+                <a
+                    href="https://www.instagram.com/prince.abuu.bakar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="map-contact-icon map-contact-instagram"
+                    aria-label="Instagram"
+                >
+                    <img src="assets/images/insta.jpg" alt="" aria-hidden="true">
+                </a>
+                <a
+                    href="tel:+255772548855"
+                    class="map-contact-icon map-contact-call"
+                    aria-label="Call Zanzibar Tours"
+                >
+                    <i data-lucide="phone" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="faq section-padding">
+
+    <div class="container faq-grid">
+
+        <div class="faq-heading">
+
+            <span class="section-tag" data-i18n="needHelp">NEED HELP?</span>
+
+            <h2><span data-i18n="frequently">Frequently</span> <span data-i18n="askedQuestions">Asked Questions</span></h2>
+
+            <p>
+                <span data-i18n="faqIntro">Find answers to common questions about booking your Zanzibar experiences.</span>
+            </p>
+
+            <a href="https://wa.me/255772548855" target="_blank" class="text-link">
+                <span data-i18n="askWhatsApp">Ask us on WhatsApp</span>
+                <i data-lucide="arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="faq-list">
+
+            <div class="faq-item active">
+
+                <button class="faq-question">
+
+                    <span data-i18n="faqQ1">How can I book a tour?</span>
+
+                    <i data-lucide="plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        <span data-i18n="faqA1">Select your preferred tour, complete the booking form and send your request through WhatsApp. We will respond with availability and details.</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span data-i18n="faqQ2">Are tour prices fixed?</span>
+
+                    <i data-lucide="plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        <span data-i18n="faqA2">Prices may depend on the selected activity, number of guests, transport and package details. Contact us for a quotation.</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span data-i18n="faqQ3">Can I customize my trip?</span>
+
+                    <i data-lucide="plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        <span data-i18n="faqA3">Yes. You can request a personalized itinerary based on your travel dates, interests, activities and available time.</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span data-i18n="faqQ4">Do you offer airport transfers?</span>
+
+                    <i data-lucide="plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        <span data-i18n="faqA4">Yes. Airport pickup, hotel transfers and transportation arrangements can be requested.</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span data-i18n="faqQ5">Can I book safari trips in Tanzania?</span>
+
+                    <i data-lucide="plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+                        <span data-i18n="faqA5">Yes. You can inquire about Tanzania safari trips, including Mikumi National Park and other available destinations.</span>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</main>
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+
+                    <img
+                        src="assets/images/logo.jpeg"
+                        alt="Prince Abuu Bakar Zanzibar Tours"
+                        class="site-logo footer-logo"
+                        width="62"
+                        height="62"
+                        loading="lazy"
+                    >
+                    <span class="brand-name footer-brand-name">Prince Abuu Bakar <small>Tour</small></span>
+
+                </a>
+
+                <p data-i18n="footerText">
+                    Discover Zanzibar with local experiences, beautiful destinations and unforgettable adventures.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4 data-i18n="quickLinks">Quick Links</h4>
+
+                <a href="index.html">
+                    <i data-lucide="house" aria-hidden="true"></i>
+                    <span data-i18n="navHome">Home</span>
+                </a>
+                <a href="about.html">
+                    <i data-lucide="info" aria-hidden="true"></i>
+                    <span data-i18n="navAbout">About</span>
+                </a>
+                <a href="destinations.html">
+                    <i data-lucide="map-pin" aria-hidden="true"></i>
+                    <span data-i18n="navDestinations">Destinations</span>
+                </a>
+                <a href="tours.html">
+                    <i data-lucide="compass" aria-hidden="true"></i>
+                    <span data-i18n="ourTours">Our Tours</span>
+                </a>
+                <a href="booking.html">
+                    <i data-lucide="calendar-check" aria-hidden="true"></i>
+                    <span data-i18n="booking">Booking</span>
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4 data-i18n="popularTours">Popular Tours</h4>
+
+                <a href="tours.html">
+                    <i data-lucide="fish" aria-hidden="true"></i>
+                    <span data-i18n="mnembaIsland">Mnemba Island</span>
+                </a>
+                <a href="tours.html">
+                    <i data-lucide="waves" aria-hidden="true"></i>
+                    <span data-i18n="safariBlue">Safari Blue</span>
+                </a>
+                <a href="tours.html">
+                    <i data-lucide="landmark" aria-hidden="true"></i>
+                    <span data-i18n="stoneTown">Stone Town</span>
+                </a>
+                <a href="tours.html">
+                    <i data-lucide="leaf" aria-hidden="true"></i>
+                    <span data-i18n="spiceFarm">Spice Farm</span>
+                </a>
+                <a href="tours.html">
+                    <i data-lucide="tree-palm" aria-hidden="true"></i>
+                    <span data-i18n="jozaniForest">Jozani Forest</span>
+                </a>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h4 data-i18n="contactUs">Contact Us</h4>
+
+                <div class="footer-contact-list">
+                    <a href="https://wa.me/255772548855" target="_blank" rel="noopener noreferrer" class="footer-contact-item" aria-label="WhatsApp: +255 772 548 855">
+                        <img src="assets/images/what.jpg" alt="" aria-hidden="true">
+                        <span>
+                            <strong data-i18n="whatsapp">WhatsApp</strong>
+                            <small>+255 772 548 855</small>
+                        </span>
+                    </a>
+
+                    <a href="https://www.instagram.com/prince.abuu.bakar/" target="_blank" rel="noopener noreferrer" class="footer-contact-item">
+                        <img src="assets/images/insta.jpg" alt="" aria-hidden="true">
+                        <span>
+                            <strong data-i18n="instagram">Instagram</strong>
+                            <small>@prince.abuu.bakar</small>
+                        </span>
+                    </a>
+
+                    <div class="footer-contact-item footer-contact-location">
+                        <i data-lucide="map-pin" aria-hidden="true"></i>
+                        <span>
+                            <strong data-i18n="location">Location</strong>
+                            <small>Zanzibar, Tanzania</small>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; <span id="year"></span>
+                Prince Abuu Bakar Zanzibar Tours.
+                <span data-i18n="rightsReserved">All rights reserved.</span>
+            </p>
+
+            <p data-i18n="footerTagline">
+                Discover. Explore. Experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top" hidden>
+    <i data-lucide="arrow-up" aria-hidden="true"></i>
+</button>
+<a href="https://wa.me/255772548855"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat on WhatsApp">
+
+    <img src="assets/images/whatsapp-float.jpg" alt="WhatsApp">
+
+</a>
+<script src="script.js"></script>
+</body>
+</html>
