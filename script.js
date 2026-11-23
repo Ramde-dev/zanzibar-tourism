@@ -204,6 +204,8 @@ const tours = [
 
 ];
 
+const optimizedImagePath = src => src.replace("assets/images/", "assets/images/optimized/");
+
 const tourPhotoDetails = {
     1: [
         { src: "assets/images/ston town1.jpeg", alt: "Stone Town's historic cathedral and surrounding streets" },
@@ -384,10 +386,10 @@ const galleryPhotoSets = [
 ];
 
 const tourPhotoDetailsBySource = new Map(
-    Object.values(tourPhotoDetails).flat().map(photo => [photo.src, photo.alt])
+    Object.values(tourPhotoDetails).flat().map(photo => [optimizedImagePath(photo.src), photo.alt])
 );
 const galleryPhotos = galleryPhotoSets.flatMap(set => set.files.map((file, index) => {
-    const src = `assets/images/${file}`;
+    const src = optimizedImagePath(`assets/images/${file}`);
     const alt = tourPhotoDetailsBySource.get(src) || `${set.alt}, photo ${index + 1}`;
     return {
         src,
@@ -480,7 +482,7 @@ const featuredGalleryPhotoSources = [
     "assets/images/kendwa beach1.jpeg",
     "assets/images/ston town1.jpeg",
     "assets/images/mikumi1.jpeg"
-];
+].map(optimizedImagePath);
 const featuredGalleryPhotos = featuredGalleryPhotoSources.map(src => {
     const photo = galleryPhotos.find(item => item.src === src);
     if (!photo) throw new Error(`Featured gallery photo is missing: ${src}`);
@@ -489,7 +491,7 @@ const featuredGalleryPhotos = featuredGalleryPhotoSources.map(src => {
 const remainingGalleryPhotos = galleryPhotos.filter(photo => !featuredGalleryPhotos.includes(photo));
 const destinationPhotoSets = [
     {
-        featuredSrc: "assets/images/kendwa beach1.jpeg",
+        featuredSrc: optimizedImagePath("assets/images/kendwa beach1.jpeg"),
         captions: [
             "Kendwa Beach, Zanzibar",
             "Mtende Beach, Zanzibar",
@@ -499,7 +501,7 @@ const destinationPhotoSets = [
         ]
     },
     {
-        featuredSrc: "assets/images/ston town1.jpeg",
+        featuredSrc: optimizedImagePath("assets/images/ston town1.jpeg"),
         captions: [
             "Stone Town, Zanzibar",
             "Zanzibar Spice Farm",
@@ -508,7 +510,7 @@ const destinationPhotoSets = [
         ]
     },
     {
-        featuredSrc: "assets/images/mnemb island3.jpeg",
+        featuredSrc: optimizedImagePath("assets/images/mnemb island3.jpeg"),
         captions: [
             "Mnemba Island, Zanzibar",
             "Mikumi National Park, Tanzania",
@@ -547,7 +549,7 @@ const heroPhotos = [
     "assets/images/nakupenda1.jpeg",
     "assets/images/kendwa beach1.jpeg",
     "assets/images/safari bluu1.jpeg"
-];
+].map(optimizedImagePath);
 let heroPhotoTimer;
 let destinationPhotoTimer;
 let galleryExpanded = currentPage === "destinations.html" || currentPage === "gallery.html";
@@ -564,6 +566,14 @@ function createIcons() {
         window.lucide.createIcons();
     }
 
+}
+
+function isWithinViewport(element) {
+    const bounds = element.getBoundingClientRect();
+    return bounds.bottom > 0
+        && bounds.top < window.innerHeight
+        && bounds.right > 0
+        && bounds.left < window.innerWidth;
 }
 
 function initializeDestinationSlideshows() {
@@ -641,7 +651,9 @@ function startDestinationPhotoMotion() {
 
     destinationPhotoTimer = window.setInterval(() => {
         destinationGrid.querySelectorAll(".destination-card").forEach((card, index) => {
-            window.setTimeout(() => changeDestinationPhoto(card), index * 160);
+            if (isWithinViewport(card)) {
+                window.setTimeout(() => changeDestinationPhoto(card), index * 160);
+            }
         });
     }, 4500);
 }
@@ -841,7 +853,9 @@ function startTourPhotoMotion() {
 
     tourPhotoTimer = window.setInterval(() => {
         tourGrid.querySelectorAll(".tour-card").forEach((card, index) => {
-            window.setTimeout(() => changeTourCardPhoto(card, 1), index * 140);
+            if (isWithinViewport(card)) {
+                window.setTimeout(() => changeTourCardPhoto(card, 1), index * 140);
+            }
         });
     }, 8500);
 }
