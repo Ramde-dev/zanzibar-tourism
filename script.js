@@ -5,7 +5,7 @@
 ========================================= */
 
 /* WhatsApp contact */
-const WHATSAPP_NUMBER = "255772548855";
+const WHATSAPP_NUMBERS = ["255772548855", "255772075448"];
 
 /* =========================================
    TOURS DATA
@@ -1186,11 +1186,11 @@ Please provide availability and the tour price.
 Thank you!`;
 
 
-        const whatsappURL =
-            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(bookingMessage)}`;
-
-
-        window.open(whatsappURL, "_blank");
+        WHATSAPP_NUMBERS.forEach(number => {
+            const whatsappURL =
+                `https://wa.me/${number}?text=${encodeURIComponent(bookingMessage)}`;
+            window.open(whatsappURL, "_blank", "noopener");
+        });
 
     });
 
