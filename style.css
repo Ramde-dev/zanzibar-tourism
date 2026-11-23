@@ -1369,6 +1369,16 @@ p {
     background: #fbf0f5;
 }
 
+.map-contact-facebook {
+    border-color: #d7e4f6;
+    background: #edf4ff;
+}
+
+.map-contact-tiktok {
+    border-color: #dedee4;
+    background: #f4f4f6;
+}
+
 .map-contact-call {
     border-color: rgba(8, 126, 128, .16);
     background: var(--primary-light);
