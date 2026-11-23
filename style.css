@@ -1682,7 +1682,13 @@ p {
 
 .footer-contact-list {
     display: grid;
-    gap: 13px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px 18px;
+}
+
+.footer-contact-email,
+.footer-contact-location {
+    grid-column: 1 / -1;
 }
 
 .footer-contact-item {
@@ -1748,6 +1754,14 @@ p {
 .footer-bottom p {
     color: #a7bcba;
     font-size: 11px;
+}
+
+@media (max-width: 800px) {
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /* WHATSAPP FLOATING BUTTON */
